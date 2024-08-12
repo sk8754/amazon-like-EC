@@ -75,7 +75,11 @@ const Page = ({ params }: { params: { id: string } }) => {
           カートに入れる
         </button>
       </div>
-      {showToast && <div className="toast">カートに追加されました。</div>}
+      {showToast && (
+        <div className="text-2xl font-bold text-[red]">
+          カートに追加されました。
+        </div>
+      )}
     </div>
   );
 };
