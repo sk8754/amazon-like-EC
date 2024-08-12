@@ -3,7 +3,7 @@ import { login } from "./actions";
 
 export default function LoginPage() {
   return (
-    <form className="flex flex-col lg:w-[400px] mx-auto mt-24 ">
+    <form className="flex flex-col px-[5%] sm:px-0 lg:w-[400px] mx-auto mt-24 ">
       <h2 className="text-2xl font-bold">ログインページ</h2>
       <label htmlFor="email">Email:</label>
       <input
