@@ -9,7 +9,7 @@ const Page = ({ params }: { params: { id: string } }) => {
   const supabase = createClient();
 
   const [fetchItemData, setFetchItemData] = useState<any>(null);
-  const [showModal, setShowModal] = useState(false);
+  const [showToast, setShowToast] = useState(false);
 
   const { data, setData } = useDataContext();
   const getItemData = async () => {
@@ -36,7 +36,8 @@ const Page = ({ params }: { params: { id: string } }) => {
 
   // カートに追加する処理
   const handleAddToCart = () => {
-    setShowModal(true); // モーダルを表示
+    setShowToast(true); // トーストを表示
+    setTimeout(() => setShowToast(false), 3000); // 3秒後にトーストを非表示
     setData([
       ...data,
       {
@@ -46,11 +47,6 @@ const Page = ({ params }: { params: { id: string } }) => {
         img_path: fetchItemData?.img_path,
       },
     ]);
-  };
-
-  // モーダルの閉じる処理
-  const handleCloseModal = () => {
-    setShowModal(false);
   };
 
   return (
@@ -79,14 +75,9 @@ const Page = ({ params }: { params: { id: string } }) => {
           カートに入れる
         </button>
       </div>
-      {showModal && (
-        <div className="modal">
-          <div className="modal-content">
-            <span className="close" onClick={handleCloseModal}>
-              &times;
-            </span>
-            <p>カートに追加されました。</p>
-          </div>
+      {showToast && (
+        <div className="w-full sm:max-w-[600px] mx-auto text-2xl font-bold text-[red]">
+          カートに追加されました。
         </div>
       )}
     </div>
