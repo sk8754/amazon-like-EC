@@ -34,6 +34,7 @@ const Page = ({ params }: { params: { id: string } }) => {
   }, [params.id]);
 
   const handleAddToCart = () => {
+    alert("カートに商品を追加しました。");
     setData([
       ...data,
       {
@@ -43,7 +44,6 @@ const Page = ({ params }: { params: { id: string } }) => {
         img_path: fetchItemData?.img_path,
       },
     ]);
-    alert("カートに商品を追加しました。");
   };
 
   return (
