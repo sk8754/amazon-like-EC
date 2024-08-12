@@ -12,7 +12,7 @@ export type Items = {
   price: number;
   img_path: string;
 };
-const page = () => {
+const Page = () => {
   const supabase = createClient();
 
   const { data, setData } = useDataContext();
@@ -88,4 +88,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

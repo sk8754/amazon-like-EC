@@ -5,7 +5,7 @@ import { createClient } from "@/utils/supabase/client";
 import Link from "next/link";
 import { useDataContext } from "@/context/CartContext";
 
-const page = ({ params }: { params: { id: string } }) => {
+const Page = ({ params }: { params: { id: string } }) => {
   const supabase = createClient();
 
   const [fetchItemData, setFetchItemData] = useState<any>(null);
@@ -76,4 +76,4 @@ const page = ({ params }: { params: { id: string } }) => {
   );
 };
 
-export default page;
+export default Page;

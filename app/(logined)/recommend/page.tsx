@@ -2,7 +2,7 @@ import { createClient } from "@/utils/supabase/server";
 import Link from "next/link";
 import React from "react";
 
-const page = async () => {
+const Page = async () => {
   const supabase = createClient();
 
   const dataFetch = async () => {
@@ -54,4 +54,4 @@ const page = async () => {
   );
 };
 
-export default page;
+export default Page;
