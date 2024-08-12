@@ -6,9 +6,9 @@ const Page = () => {
     <main>
       <form
         action={signup}
-        className="max-w-[800px] mx-auto text-center h-[500px] "
+        className="max-w-[400px] mx-auto text-center h-[500px] "
       >
-        <div className="px-[5%] sm:px-0 flex flex-col w-[50%] h-[100%] mx-auto justify-center gap-4">
+        <div className="px-[5%] sm:px-0 flex flex-col w-[full] h-[100%] mx-auto justify-center gap-4">
           <h2 className="font-bold text-2xl">登録ページ</h2>
           <input
             className="border-2"
