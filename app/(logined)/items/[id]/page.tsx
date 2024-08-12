@@ -9,6 +9,7 @@ const Page = ({ params }: { params: { id: string } }) => {
   const supabase = createClient();
 
   const [fetchItemData, setFetchItemData] = useState<any>(null);
+  const [showAlert, setShowAlert] = useState(false); // アラート表示用の状態を追加
 
   const { data, setData } = useDataContext();
   const getItemData = async () => {
@@ -33,8 +34,8 @@ const Page = ({ params }: { params: { id: string } }) => {
     fetchData();
   }, [params.id]);
 
+  // カートに追加する処理
   const handleAddToCart = () => {
-    alert("カートに商品を追加しました。");
     setData([
       ...data,
       {
@@ -44,7 +45,16 @@ const Page = ({ params }: { params: { id: string } }) => {
         img_path: fetchItemData?.img_path,
       },
     ]);
+    setShowAlert(true); // アラートを表示する状態を更新
   };
+
+  // アラートを表示するためのuseEffectを追加
+  useEffect(() => {
+    if (showAlert) {
+      alert("カートに商品を追加しました。");
+      setShowAlert(false); // アラート表示後に状態をリセット
+    }
+  }, [showAlert]);
 
   return (
     <div className="mt-16 px-[5%] sm:px-0">
