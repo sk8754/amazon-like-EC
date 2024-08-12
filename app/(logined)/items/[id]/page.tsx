@@ -47,7 +47,7 @@ const Page = ({ params }: { params: { id: string } }) => {
   };
 
   return (
-    <div className="mt-16">
+    <div className="mt-16 px-[5%] sm:px-0">
       <h1 className="text-4xl mb-[3rem]">{fetchItemData?.name}の商品詳細</h1>
       <div className="w-full sm:max-w-[600px] mx-auto">
         <img src={fetchItemData?.img_path} alt="" />
