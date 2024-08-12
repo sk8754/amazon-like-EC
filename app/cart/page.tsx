@@ -54,7 +54,7 @@ const Page = () => {
   }
 
   return (
-    <div>
+    <div className="px-[5%] sm:px-0">
       <Header />
       <div className="max-w-[900px] mx-auto">
         <h2 className="font-bold text-3xl mt-[5rem]">カートの商品</h2>
