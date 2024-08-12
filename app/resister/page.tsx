@@ -39,7 +39,7 @@ const Page = () => {
         </div>
       </form>
 
-      <div className="max-w-[400px] mx-auto text-center mt-[3rem]">
+      <div className="max-w-[400px] mx-auto text-center mt-[1rem]">
         <button className="bg-[#2dbe22] w-[50%] mx-auto text-[white] p-[0.5rem] rounded-[1rem]">
           <Link className="block" href={"/login"}>
             ログインページ
