@@ -2,20 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -29,5 +15,50 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+.slide-show ul li {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  /* 最初は3枚の画像を非表示にしておく */
+  opacity: 0;
+  /*
+  アニメーションを実行
+  fade：下で定義している「@keyframes fade」を実行
+  15s：「@keyframes fade」の処理を15秒かけて実行
+  infinite：アニメーションの処理を無限に繰り返す
+  */
+  animation: slide-show 15s infinite;
+}
+.slide-show ul li:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.slide-show ul li:nth-child(2) {
+  animation-delay: 5s;
+}
+
+.slide-show ul li:nth-child(3) {
+  animation-delay: 10s;
+}
+
+@keyframes slide-show {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
   }
 }
