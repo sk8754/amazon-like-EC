@@ -9,6 +9,7 @@ const Page = ({ params }: { params: { id: string } }) => {
   const supabase = createClient();
 
   const [fetchItemData, setFetchItemData] = useState<any>(null);
+  const [showToast, setShowToast] = useState(false);
 
   const { data, setData } = useDataContext();
   const getItemData = async () => {
@@ -35,9 +36,8 @@ const Page = ({ params }: { params: { id: string } }) => {
 
   // カートに追加する処理
   const handleAddToCart = () => {
-    if (data) {
-      alert("カートに追加されました");
-    }
+    setShowToast(true); // トーストを表示
+    setTimeout(() => setShowToast(false), 3000); // 3秒後にトーストを非表示
     setData([
       ...data,
       {
@@ -75,6 +75,7 @@ const Page = ({ params }: { params: { id: string } }) => {
           カートに入れる
         </button>
       </div>
+      {showToast && <div className="toast">カートに追加されました。</div>}
     </div>
   );
 };
