@@ -54,36 +54,38 @@ const Page = () => {
   }
 
   return (
-    <div className="px-[5%] sm:px-0">
+    <div>
       <Header />
-      <div className="max-w-[900px] mx-auto">
-        <h2 className="font-bold text-3xl mt-[5rem]">カートの商品</h2>
-      </div>
-
-      {items?.map((item) => (
-        <div
-          className="mt-[5rem] max-w-[900px] mx-auto flex justify-center "
-          key={item.id}
-        >
-          <div>
-            <img src={item.img_path} className="w-full sm:max-w-[600px]" />
-            <h2 className="font-bold text-2xl">{item.name}</h2>
-            <p>単価: {item.price}円</p>
-            <p>{}個</p>
-          </div>
+      <div className="px-[5%] sm:px-0">
+        <div className="max-w-[900px] mx-auto">
+          <h2 className="font-bold text-3xl mt-[5rem]">カートの商品</h2>
         </div>
-      ))}
-      <div className="mt-[5rem] mb-[3rem] max-w-[900px] mx-auto text-center">
-        <p className="font-bold text-3xl">合計金額 {total}円</p>
 
-        <button className="mt-[1rem] p-[1rem] bg-[#04cb04] rounded-[1rem]">
-          <Link className="font-bold text-3xl" href={"/order"}>
-            注文ページ
-          </Link>
-        </button>
+        {items?.map((item) => (
+          <div
+            className="mt-[5rem] max-w-[900px] mx-auto flex justify-center "
+            key={item.id}
+          >
+            <div>
+              <img src={item.img_path} className="w-full sm:max-w-[600px]" />
+              <h2 className="font-bold text-2xl">{item.name}</h2>
+              <p>単価: {item.price}円</p>
+              <p>{}個</p>
+            </div>
+          </div>
+        ))}
+        <div className="mt-[5rem] mb-[3rem] max-w-[900px] mx-auto text-center">
+          <p className="font-bold text-3xl">合計金額 {total}円</p>
+
+          <button className="mt-[1rem] p-[1rem] bg-[#04cb04] rounded-[1rem]">
+            <Link className="font-bold text-3xl" href={"/order"}>
+              注文ページ
+            </Link>
+          </button>
+        </div>
+
+        <Footer />
       </div>
-
-      <Footer />
     </div>
   );
 };
