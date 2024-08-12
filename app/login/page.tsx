@@ -1,8 +1,10 @@
+import Link from "next/link";
 import { login } from "./actions";
 
 export default function LoginPage() {
   return (
     <form className="flex flex-col lg:w-[400px] mx-auto mt-24 ">
+      <h2 className="text-2xl font-bold">ログインページ</h2>
       <label htmlFor="email">Email:</label>
       <input
         id="email"
@@ -24,6 +26,10 @@ export default function LoginPage() {
         className=" bg-[#3f3ff1] text-[white] w-[40%] mx-auto py-2 rounded-[1.5rem] mt-4"
       >
         ログイン
+      </button>
+
+      <button className=" bg-[#26d426] text-[white] w-[40%] mx-auto py-2 rounded-[1.5rem] mt-4">
+        <Link href={"/resister"}>登録</Link>
       </button>
     </form>
   );
