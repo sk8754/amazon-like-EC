@@ -83,9 +83,8 @@ const Page = () => {
             </Link>
           </button>
         </div>
-
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 };
