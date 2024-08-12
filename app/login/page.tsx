@@ -31,7 +31,9 @@ export default function LoginPage() {
       </form>
       <div className="px-[5%] sm:px-0 lg:w-[400px] mx-auto text-center">
         <button className=" bg-[#26d426] text-[white] w-[40%] mx-auto py-2 rounded-[1.5rem] mt-4">
-          <Link href={"/resister"}>登録</Link>
+          <Link className="block" href={"/resister"}>
+            登録
+          </Link>
         </button>
       </div>
     </div>
