@@ -29,7 +29,7 @@ const Page = async () => {
     <div className="mt-[6rem] grid grid-cols-2 sm:grid-cols-4">
       {saleItems?.map((item) => (
         <div key={item.id}>
-          <Image src={`${item.img_path}`} alt="" />
+          <img src={item.img_path} alt="画像" />
           <h2>{item.name}</h2>
           <p>{item.content}</p>
           <p className="text-[#f52e2e] font-bold">{item.price}円</p>
