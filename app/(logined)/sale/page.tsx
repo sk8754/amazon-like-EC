@@ -26,7 +26,7 @@ const Page = async () => {
   const saleItems = itemData?.filter((filterd) => filterd["price"] <= 1000); // 修正: 価格が1000以下の要素を取得
 
   return (
-    <div className="mt-[6rem] grid grid-cols-2 sm:grid-cols-4">
+    <div className="mt-[6rem] grid grid-cols-2 sm:grid-cols-4 gap-6">
       {saleItems?.map((item) => (
         <div key={item.id}>
           <img src={item.img_path} alt="画像" />
