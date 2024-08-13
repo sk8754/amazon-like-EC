@@ -173,7 +173,7 @@ export async function Toppage() {
             {saleData?.map((item) => (
               <div
                 key={item.id}
-                className="bg-white rounded-md shadow-sm p-4 relative"
+                className="bg-white rounded-md shadow-sm  relative"
               >
                 <img
                   src={item.img_path}
