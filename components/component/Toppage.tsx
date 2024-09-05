@@ -205,9 +205,9 @@ export async function Toppage() {
             </Link>
           </div>
         </section>
-
-        <Footer />
       </div>
+
+      <Footer />
     </div>
   );
 }
